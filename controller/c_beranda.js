@@ -2,7 +2,7 @@ module.exports =
 {
 
     index: function (req,res) {
-        res.render('beranda/struktur')
+        res.render('beranda/index')
     },
 
 }
