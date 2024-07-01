@@ -20,5 +20,21 @@ module.exports =
             info_error  : null,
         }
         res.render('template/struktur', dataview)
-    }
+    },
+
+
+    
+    proses_simpan: async function(req,res) {
+        try {
+            let insert      = await m_user.tambah(req)
+            let isi_notif   = `berhasil membuat user baru`
+            if (insert.affectedRows > 0) {
+                res.redirect(`/user-management?note=${isi_notif}`)
+            }
+        } catch (error) {
+            res.render('/user/tambah', {info_error: error})
+        }
+    },
+
+
 }
