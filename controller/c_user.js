@@ -1,10 +1,24 @@
-module.exports = 
+const m_user = require("../model/m_user")
+
+module.exports =
 {
-    index: function(req,res) {
-       let dataview = {
-            konten: "user-management/index",
+    index: async function(req,res) {
+        let dataview = {
+            konten: 'user-management/index',
             uri_segment: req.path.split('/'),
-       }
-       res.render("template/struktur", dataview)
+            users: await m_user.get_semua_user()
+        }
+        res.render('template/struktur', dataview)
     },
+
+
+
+    form_tambah: function(req,res) {
+        let dataview = {
+            konten      : 'user-management/form-tambah',
+            uri_segment : req.path.split('/'),
+            info_error  : null,
+        }
+        res.render('template/struktur', dataview)
+    }
 }
