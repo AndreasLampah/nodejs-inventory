@@ -1,13 +1,13 @@
-const m_produk = require('../model/m_produk')
+const m_masuk = require('../model/m_masuk')
 
 module.exports =
 {
     index: async function(req,res) {
         let dataview = {
             req         : req,
-            konten      : 'master-produk/index',
+            konten      : 'barang-masuk/index',
             uri_segment : req.path.split('/'),
-            produk      : await m_produk.get_semua_produk()
+            produk      : await m_masuk.get_semua_produk()
         }
         res.render('template/struktur', dataview)
     },
@@ -16,10 +16,10 @@ module.exports =
 
     form_tambah: async function(req,res) {
         let dataview = {
-            konten      : 'master-produk/form-tambah',
+            konten      : 'barang-masuk/form-tambah',
             uri_segment : req.path.split('/'),
             info_error  : null,
-            kategori    : await m_produk.get_semua_kategori()
+            kategori    : await m_masuk.get_semua_kategori()
         }
         res.render('template/struktur', dataview)
     },
@@ -28,14 +28,14 @@ module.exports =
 
     proses_simpan: async function(req,res) {
         try {
-            let insert      = await m_produk.tambah(req)
-            let isi_notif   = `berhasil membuat produk baru`
+            let insert      = await m_masuk.tambah(req)
+            let isi_notif   = `berhasil membuat kategori baru`
             if (insert.affectedRows > 0) {
-                res.redirect(`/master-produk?note=sukses&pesan=${isi_notif}`)
+                res.redirect(`/barang-masuk?note=sukses&pesan=${isi_notif}`)
             }
         } catch (error) {
             let dataview = {
-                konten      : 'master-produk/form-tambah',
+                konten      : 'barang-masuk/form-tambah',
                 req         : req,
                 uri_segment : req.path.split('/'),
                 info_error  : error,

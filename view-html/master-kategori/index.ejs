@@ -1,0 +1,22 @@
+<a href="/master-kategori/tambah" class="btn btn-outline-primary rounded-circle mb-3">
+    <i class="fa-solid fa-plus"></i>
+</a>
+<div class="row">
+    <% for (const i in produk) { %>
+        <div class="col-lg-3">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title"><%= produk[i].id %></h5>
+                    <h6 class="badge bg-dark"><%= produk[i].nama %></h6>
+                    <p class="card-text"><%= produk[i].deskripsi %></p>
+                    <a href="#" class="btn btn-sm btn-outline-primary float-end mx-1">
+                        <i class="fa-solid fa-fw fa-edit"></i>
+                    </a>
+                    <a href="#" class="btn btn-sm btn-outline-primary float-end mx-1">
+                        <i class="fa-solid fa-fw fa-eye"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    <% } %>
+</div>

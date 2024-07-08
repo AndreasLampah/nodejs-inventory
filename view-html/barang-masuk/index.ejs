@@ -1,0 +1,26 @@
+<a href="/barang-masuk/tambah" class="btn btn-outline-primary rounded-circle mb-3">
+    <i class="fa-solid fa-plus"></i>
+</a>
+<div class="row">
+    <% for (const i in produk) { %>
+        <div class="col-lg-12">
+            <div class="card bg-warning">
+                <div class="card-body">
+                    <h5 class="card-title">Nama Supplier        : <%= produk[i].supplier %></h5>
+                    <h6 class="badge bg-dark">Jumlah Karton     : <%= produk[i].karton %></h6>
+                    <p class="badge bg-dark">Total qty          : <%= produk[i].pcs %></p>
+                    <p class="badge bg-danger">Barang Rusak       : <%= produk[i].barang_rusak %></p>
+                    <p class="badge bg-success">Barang bagus       : <%= produk[i].barang_bagus %></p>
+                    <a href="#" class="btn btn-sm btn-outline-primary float-end mx-1">
+                        <i class="fa-solid fa-fw fa-edit"></i>
+                        edit
+                    </a>
+                    <a href="#" class="btn btn-sm btn-outline-primary float-end mx-1">
+                        <i class="fa-solid fa-fw fa-eye"></i>
+                        detail
+                    </a>
+                </div>
+
+        </div>
+    <% } %>
+</div>

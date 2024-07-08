@@ -1,0 +1,17 @@
+#Project baru:
+Dengan tema yg berbeda dari Inventory
+ketentuan: ada master, transaksi, laporan (nilai plus)
+
+atau
+
+#Tantangan dari coach:
+pilih minimal 2, (nilai plus jika lebih dari 2 atau fitur baru yg belum pernah ada)
+#. edit user
+#. hapus user
+#. ganti password
+#. master kategori: index
+#. master kategori: tambah
+#. master kategori: edit
+#. master kategori: lihat detail
+#. master produk: edit
+#. master produk: lihat detail

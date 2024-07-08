@@ -1,0 +1,50 @@
+<h2>Form Input laporan barang masuk</h2>
+<hr>
+
+<% if (info_error) { %>
+    <strong style="color: red;">
+        <%= info_error.errno %> - <%= info_error.code %> <br>
+        <%= info_error.sqlMessage %> <br>
+    </strong>
+    <br>
+<% } %>
+
+<div class="row">
+    <div class="col-md-12 col-lg-6">
+        <form action="/barang-masuk/proses-simpan" method="post">
+
+            <div class="mb-3">
+                <label class="form-label">Nama Supplier</label>
+                <input type="text" class="form-control" id="form_supplier" name="form_supplier" required>
+            </div>
+        
+            <div class="mb-3">
+                <label class="form-label">Jumlah karton</label>
+                <input type="text" class="form-control" id="form_karton" name="form_karton" required>
+            </div>
+        
+            <div class="mb-3">
+                <label class="form-label">Total qty</label>
+                <input type="text" class="form-control" id="form_pcs" name="form_pcs" required>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Barang Rusak</label>
+                <input type="text" class="form-control" id="form_barang_rusak" name="form_barang_rusak" required>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Barang Bagus</label>
+                <input type="text" class="form-control" id="form_barang_bagus" name="form_barang_bagus" required>
+            </div>
+
+            
+
+            
+            
+            <button type="submit" class="btn btn-secondary mt-3">
+                <i class="fa-solid fa-save me-1"></i> simpan
+            </button>
+        </form>
+    </div>
+</div>

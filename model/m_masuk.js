@@ -7,7 +7,7 @@ module.exports =
 {
     get_semua_produk: function() {
         let sql = mysql.format(
-            `SELECT * FROM master_produk;`
+            `SELECT * FROM barang_masuk;`
         )
 
         return new Promise( (resolve,reject)=>{
@@ -25,7 +25,7 @@ module.exports =
 
     get_semua_kategori: function() {
         let sql = mysql.format(
-            `SELECT * FROM master_kategori;`
+            `SELECT * FROM barang_masuk;`
         )
 
         return new Promise( (resolve,reject)=>{
@@ -44,15 +44,16 @@ module.exports =
     tambah: function(req) {
         let data = {
             // nama kolom di sql: req.body.name
-            kode        : req.body.form_kode,
-            nama        : req.body.form_nama,
-            deskripsi   : req.body.form_deskripsi,
-            id_kategori : req.body.form_kategori,
-            dibuat_oleh : req.session.user.id,
-            dibuat_kapan: moment().format('YYYY-MM-DD HH:mm:ss')
+            supplier        : req.body.form_supplier,
+            karton          : req.body.form_karton,
+            pcs             : req.body.form_pcs,    
+            barang_rusak    : req.body.form_barang_rusak,
+            barang_bagus    : req.body.form_barang_bagus,
+
+            
         }
         let sql = mysql.format(
-            `INSERT INTO master_produk SET ?`,
+            `INSERT INTO barang_masuk SET ?`,
             [data]
         )
 
